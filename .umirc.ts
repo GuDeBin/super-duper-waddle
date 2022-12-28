@@ -1,5 +1,7 @@
 import { defineConfig } from "umi";
 
 export default defineConfig({
-  npmClient: 'pnpm',
+  npmClient: "pnpm",
+  tailwindcss: {},
+  plugins: ["@umijs/plugins/dist/tailwindcss"],
 });
