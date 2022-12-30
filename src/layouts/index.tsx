@@ -1,4 +1,5 @@
 import { Link, Outlet } from "umi";
+import "./index.css";
 
 export default function Layout() {
   return (

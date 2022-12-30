@@ -20,10 +20,28 @@ export default function Dropdown({ icon, options }: DropdownItemProps) {
   };
 
   return (
-    <div className="">
-      <div className="" onClick={toggleDropdown}>
+    <div className="dropdown">
+      <div className="dropdown-title" onClick={toggleDropdown}>
         <BsThreeDotsVertical />
       </div>
+      {isOpen && (
+        <div className="dropdown-list-container">
+          {options.map((option: Option) => {
+            return (
+              <button
+                onClick={
+                  option.value == "Edit"
+                    ? () => setIsOpen(false)
+                    : () => option.onClick()
+                }
+                className={`${option.color} dropdown-list-btn`}
+              >
+                {option.value}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
